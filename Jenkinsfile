@@ -3,30 +3,10 @@ pipeline{
     stages{
         stage("Build"){
             steps{
+                echo "========= Build steps started =========="
                 sh 'echo "Build completed"'
+                echo "========= Build steps completed ========"
             }
-            post{
-                always{
-                    echo "========always========"
-                }
-                success{
-                    echo "========A executed successfully========"
-                }
-                failure{
-                    echo "========A execution failed========"
-                }
-            }
-        }
-    }
-    post{
-        always{
-            echo "========always========"
-        }
-        success{
-            echo "========pipeline executed successfully ========"
-        }
-        failure{
-            echo "========pipeline execution failed========"
         }
     }
 }
